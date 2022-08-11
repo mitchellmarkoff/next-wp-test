@@ -9,7 +9,7 @@ console.log("HERE \n");
 console.log(process.env.PANTHEON_CMS_ENDPOINT);
 let backendUrl, imageDomain;
 if (process.env.WPGRAPHQL_URL === undefined) {
-  backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
+  backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
 } else {
   backendUrl = process.env.WPGRAPHQL_URL;
 }
