@@ -5,8 +5,7 @@ const path = require("path");
 require("dotenv").config({
   path: path.resolve(process.cwd(), ".env.development.local"),
 });
-console.log("HERE \n");
-console.log(process.env.PANTHEON_CMS_ENDPOINT);
+
 let backendUrl, imageDomain;
 if (process.env.WPGRAPHQL_URL === undefined) {
   backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
@@ -14,8 +13,7 @@ if (process.env.WPGRAPHQL_URL === undefined) {
   backendUrl = process.env.WPGRAPHQL_URL;
 }
 if (process.env.IMAGE_DOMAIN === undefined) {
-  imageDomain = backendUrl.replace(/^https:\/\//, "");
-  imageDomain = imageDomain.replace("/wp/graphql", "");
+  imageDomain = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT;
 } else {
   imageDomain = process.env.IMAGE_DOMAIN;
 }
