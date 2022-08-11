@@ -9,13 +9,10 @@ require("dotenv").config({
 let backendUrl, imageDomain;
 if (process.env.WPGRAPHQL_URL === undefined) {
   backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
+  imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
 } else {
   backendUrl = process.env.WPGRAPHQL_URL;
-}
-if (process.env.IMAGE_DOMAIN === undefined) {
-  imageDomain = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT;
-} else {
-  imageDomain = process.env.IMAGE_DOMAIN;
+  imageDomain = process.env.IMAGE_DOMAIN || process.env.WPGRAPHQL_URL;
 }
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, "");
