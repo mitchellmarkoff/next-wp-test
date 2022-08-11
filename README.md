@@ -50,5 +50,3 @@ including:
 The `tailwindcssPlugin` is included in this project and is used to map WordPress Block Editor styles to Tailwind styles.
 
 Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit
-
-Build
