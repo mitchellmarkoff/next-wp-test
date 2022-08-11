@@ -26,6 +26,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     backendUrl: backendUrl,
+    imageUrl: `https://${imageDomain}`,
   },
   images: {
     domains: [imageDomain],
