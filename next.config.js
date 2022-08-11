@@ -13,8 +13,9 @@ if (process.env.WPGRAPHQL_URL === undefined) {
   backendUrl = process.env.WPGRAPHQL_URL;
 }
 if (process.env.IMAGE_DOMAIN === undefined) {
-  imageDomain = backendUrl.replace(/^https:\/\//, "");
-  imageDomain = imageDomain.replace("/wp/graphql", "");
+  // imageDomain = backendUrl.replace(/^https:\/\//, "");
+  // imageDomain = imageDomain.replace("/wp/graphql", "");
+    imageDomain = process.env.PANTHEON_CMS_ENDPOINT
 } else {
   imageDomain = process.env.IMAGE_DOMAIN;
 }
